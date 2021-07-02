@@ -4,11 +4,6 @@ const cors = require('cors')
 const router = express.Router();
 
 
-// Include config and utilties for tokens
-const {frontend_url,access_token_secret,access_token_life,refresh_token_secret} = require('./config');
-const {getToken} = require('./libs/utilities');
-
-
 // Route Metadata
 const meta = [
   { name: '/', auth: false },
@@ -42,6 +37,7 @@ router.use(morgan('dev'));
 
 
 // Setup Router: CORS Middleware
+const {frontend_url} = require('./config');
 router.use(cors({
   origin: frontend_url,
   credentials: true
@@ -50,6 +46,8 @@ router.use(cors({
 
 // Setup Router: Authentication Middleware
 router.use( async (req, res, next) => {
+  const {access_token_secret} = require('./config');
+  const {getToken} = require('./libs/utilities');
   const auth_required = await meta.find(route => req.originalUrl.startsWith(route.name) && route.auth);
   //console.log(await meta.find(route => req.originalUrl.startsWith(route.name) && route.auth))
   if(!auth_required) return next();
@@ -76,6 +74,8 @@ router.get('/deleteusers', async (req, res) => {
 
 // Auth routes
 router.post('/refresh_token', async (req, res) => {
+  const {getToken} = require('./libs/utilities');
+  const {refresh_token_secret} = require('./config');
   const refreshtoken = require('./controllers/auth/refreshtoken');
   if(!req.cookies.refresh_token) return res.json({ success: false, message: 'No refresh token provided.' })
   const refresh_token_response = await getToken(req.cookies.refresh_token.token, refresh_token_secret);
@@ -116,11 +116,6 @@ router.post('/resetpassword', async (req, res) => {
   return res.json( await resetpassword(req.body) );
 });
 
-router.get('/me', async (req, res) => {
-  const me = require('./controllers/users/me');
-  return res.json( await me({ method: 'get', token: req.token }) );
-});
-
 router.post('/emailchange', async (req, res) => {
   const emailchange = require('./controllers/auth/emailchange');
   return res.json( await emailchange({ token: req.token, body: req.body}) );
@@ -138,6 +133,11 @@ router.post('/passwordchange', async (req, res) => {
 
 
 // User routes
+router.get('/me', async (req, res) => {
+  const me = require('./controllers/users/me');
+  return res.json( await me({ method: 'get', token: req.token }) );
+});
+
 router.put('/me', async (req, res) => {
   const me = require('./controllers/users/me');
   return res.json( await me({ method: 'put', token: req.token, body: req.body }) );

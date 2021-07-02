@@ -31,7 +31,6 @@ const deleteUsers = (options={}) => {
 	});
 	return response_db;
 }
-// FOR TESTING ONLY
 
 const getUser = (get) => {
 	return new Promise( (resolve, reject) => {
