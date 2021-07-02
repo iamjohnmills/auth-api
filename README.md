@@ -13,7 +13,8 @@ A light-weight API workflow for authentication using Node.js, Express, MongoDB, 
 ## Setup .env file
 Add or edit your .env with the following:
 
-```# Port and URLs
+```
+# Port and URLs
 PORT=8081
 BASE_URL_DEVELOPMENT=http://localhost
 BASE_URL_PRODUCTION=https://api.auth.app
