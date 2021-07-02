@@ -13,24 +13,25 @@ A light-weight API workflow for authentication using Node.js, Express, MongoDB, 
 ## Setup .env file
 Add or edit your .env with the following:
 
-```PORT=8081
+```# Port and URLs
+PORT=8081
 BASE_URL_DEVELOPMENT=http://localhost
 BASE_URL_PRODUCTION=https://api.auth.app
 FRONTEND_URL_DEVELOPMENT=http://localhost:8080
 FRONTEND_URL_PRODUCTION=https://auth.app
-
+# JWT Access token secret and life
 ACCESS_TOKEN_SECRET=[SECRET]
 ACCESS_TOKEN_LIFE=120
-
+# JWT secret and life
 REFRESH_TOKEN_SECRET=[SECRET]
 REFRESH_TOKEN_LIFE=86400
-
+# Product name references in email templates
 PRODUCT_NAME=Auth.app
-
+# Mongo URL
 MONGO_DB=[MONGO_DB_URL]
-
+# Expiration time to verify email
 VERIFY_EXPIRATION=86400000
-
+# Email Settings
 EMAIL_REPLY=noreply@whatever.com
 EMAIL_HOST_DEV=smtp.mailtrap.io
 EMAIL_PORT_DEV=2525
