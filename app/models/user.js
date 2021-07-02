@@ -6,19 +6,13 @@ const User = mongoose.model('User', new mongoose.Schema({
 	password: String,
   first_name: String,
   last_name: String,
-  pay_to_name: String,
-  stripe_api_key: String,
   activation_code: String,
   activation_expiration: Date,
   reset_code: String,
   reset_expiration: Date,
   last_login: Date,
-	status: String, // active | pending_email_verification | pending_stripe_integration | stripe_authentication_failed | pending_properties | pending_residents | delete
-  role: String, // admin | customer
-  plan: {
-	  type: mongoose.Schema.Types.ObjectId,
-	  ref: 'Plan'
-  }
+	status: String, // active | pending_email_verification
+  role: String, // admin | user
 }));
 
 // FOR TESTING ONLY

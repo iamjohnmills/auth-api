@@ -1,7 +1,7 @@
-const {validate} = require('../libs/validate');
-const {createToken} = require('../libs/utilities');
-const {getUser} = require('../models/user');
-const {access_token_secret,access_token_life,refresh_token_secret,refresh_token_life} = require('../config');
+const {validate} = require('../../libs/validate');
+const {createToken} = require('../../libs/utilities');
+const {getUser} = require('../../models/user');
+const {access_token_secret,access_token_life,refresh_token_secret,refresh_token_life} = require('../../config');
 
 const refreshtoken = async (id) => {
 	const user_get = await getUser({

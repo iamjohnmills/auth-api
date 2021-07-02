@@ -1,8 +1,8 @@
-const {validate} = require('../libs/validate');
-const {generateCode,hashPassword} = require('../libs/utilities');
-const {getUser,saveUser,deleteUser} = require('../models/user');
-const {verify_expiration} = require('../config');
-const {sendmail} = require('../libs/email');
+const {validate} = require('../../libs/validate');
+const {generateCode,hashPassword} = require('../../libs/utilities');
+const {getUser,saveUser,deleteUser} = require('../../models/user');
+const {verify_expiration} = require('../../config');
+const {sendmail} = require('../../libs/email');
 
 const register = async (body) => {
   const inputs_validated = await validate([
@@ -30,7 +30,7 @@ const register = async (body) => {
 		first_name: body.first_name,
 		last_name: body.last_name,
 		status: 'pending_email_verification',
-		role: 'customer',
+		role: 'user',
 	});
 	if(!user_update.success){
 		return { success: false, message: 'Error saving user.' };

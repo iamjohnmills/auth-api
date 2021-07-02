@@ -1,6 +1,6 @@
-const {validate} = require('../libs/validate');
-const {getUser,updateUser} = require('../models/user');
-const {hashPassword} = require('../libs/utilities');
+const {validate} = require('../../libs/validate');
+const {getUser,updateUser} = require('../../models/user');
+const {hashPassword} = require('../../libs/utilities');
 
 const resetpassword = async (body) => {
   const inputs_validated = await validate([

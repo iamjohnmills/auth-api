@@ -1,8 +1,8 @@
-const {validate} = require('../libs/validate');
-const {generateCode,hashPassword} = require('../libs/utilities');
-const {getUser,updateUser} = require('../models/user');
-const {verify_expiration} = require('../config');
-const {sendmail} = require('../libs/email');
+const {validate} = require('../../libs/validate');
+const {generateCode,hashPassword} = require('../../libs/utilities');
+const {getUser,updateUser} = require('../../models/user');
+const {verify_expiration} = require('../../config');
+const {sendmail} = require('../../libs/email');
 
 const activate = async (options) => {
 	const user_get = await getUser({
