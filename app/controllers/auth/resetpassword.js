@@ -1,5 +1,5 @@
 const {validate} = require('../libs/validate');
-const {getUser,updateUser} = require('../models/users');
+const {getUser,updateUser} = require('../models/user');
 const {hashPassword} = require('../libs/utilities');
 
 const resetpassword = async (body) => {
@@ -23,14 +23,6 @@ const resetpassword = async (body) => {
 	if(!user_update.success){
 		return { success: false, message: 'Error setting user password.' };
 	}
-  /*
-	user_update = await updateUser({_id: user_get.data._id}, {
-		password: hashPassword(body.password)
-	});
-	if(!user_update.success){
-		return { success: false, message: 'Error setting user password.' };
-	}
-  */
 	return { success: true };
 }
 

@@ -1,7 +1,7 @@
 {
-  "name": "stripepayments-backend",
+  "name": "auth-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "A light-weight workflow for authentication using Node.js, Express, MongoDB, Nodemailer, and JWTs",
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon index.js",

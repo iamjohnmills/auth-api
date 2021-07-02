@@ -69,66 +69,10 @@ const templates = [
     link_url: `${frontend_url}/activate/email/{activation_code}`
   },
   {
-    name: 'template_user_setup_stripe',
-    subject: 'Setup Stripe',
-    title: 'Setup Stripe',
-    content: `Thanks for trying ${product_name}. To start receiving payments, you’ll need to create a Stripe account and save your credentials with us.`,
-    link_text: 'Add Stripe Credentials',
-    link_url: `${frontend_url}/settings`
-  },
-  {
-    name: 'template_user_stripe_failed',
-    subject: 'Stripe Authentication Failed',
-    title: 'Stripe Authentication Failed',
-    content: `The Stripe credentials you provided failed to authenticate. Please login to check the entered credentials are accurate.`,
-    link_text: 'Check Stripe Credentials',
-    link_url: `${frontend_url}/settings`
-  },
-  {
-    name: 'template_user_stripe_verified',
-    subject: 'Stripe Verified',
-    title: 'Stripe Verified',
-    content: `We've successfully verified your Stripe account. You can now add property units and invite residents to start collecting rent the easy and simple way!`,
-    link_text: 'Setup a Rental Unit',
-    link_url: `${frontend_url}/addrental`
-  },
-  {
     name: 'template_user_delete_account',
     subject: 'Account Deleted',
     title: 'Account Deleted',
     content: `We’re sorry to see you go. Your account and any information associated with it has been deleted.`,
-  },
-  {
-    name: 'template_resident_statement',
-    subject: 'Statement Ready',
-    title: 'Statement Ready',
-    content: `Your <b>{invoice_title}</b> statement is ready to view. Follow the secure link below to make a one-time payment.`,
-    link_text: 'Make Payment',
-    link_url: `${frontend_url}/invoice/{invoice_id}`
-  },
-  {
-    name: 'template_resident_statement_verify',
-    subject: 'Confirm Transaction',
-    title: 'Confirm Transaction',
-    content: `To complete your payment for {invoice_title}, follow the secure link and enter the <b>two transaction amounts</b> posted to your bank account from ${product_name} to confirm the transaction.`,
-    link_text: 'Confirm Transaction Amounts',
-    link_url: `${frontend_url}/invoice/{invoice_id}`
-  },
-  {
-    name: 'template_resident_receipt',
-    subject: 'Payment Successful!',
-    title: 'Payment Successful!',
-    content: `Thank you for your payment! Follow the link below to download a receipt of the transaction.`,
-    link_text: 'Download',
-    link_url: `${frontend_url}/invoice/{invoice_id}`
-  },
-  {
-    name: 'template_user_receipt',
-    subject: 'Payment Received!',
-    title: 'Payment Received!',
-    content: `You received a verified payment for {invoice_amount} from {invoice_resident} at {invoice_property}. Follow the link below to view the invoice and transaction details.`,
-    link_text: 'View Invoice',
-    link_url: `${frontend_url}/invoices/{invoice_id}`
   },
 ]
 

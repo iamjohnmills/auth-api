@@ -1,6 +1,6 @@
 const {validate} = require('../libs/validate');
 const {hashPassword,createToken} = require('../libs/utilities');
-const {getUser,updateUser} = require('../models/users');
+const {getUser,updateUser} = require('../models/user');
 const {access_token_secret,access_token_life,refresh_token_secret,refresh_token_life} = require('../config');
 
 const login = async (body) => {

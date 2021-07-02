@@ -1,5 +1,5 @@
 const {validate} = require('../libs/validate');
-const {getUser,updateUser} = require('../models/users');
+const {getUser,updateUser} = require('../models/user');
 
 const activate = async (body) => {
   const inputs_validated = await validate([

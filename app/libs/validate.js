@@ -19,7 +19,6 @@ const rules = {
 }
 
 const validate = async (inputs) => {
-  //    console.log(inputs)
   return Promise.all(inputs.map(async input => {
     input.invalid = false;
     for(const i in input.validations){

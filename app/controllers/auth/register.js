@@ -1,6 +1,6 @@
 const {validate} = require('../libs/validate');
 const {generateCode,hashPassword} = require('../libs/utilities');
-const {getUser,saveUser,deleteUser} = require('../models/users');
+const {getUser,saveUser,deleteUser} = require('../models/user');
 const {verify_expiration} = require('../config');
 const {sendmail} = require('../libs/email');
 

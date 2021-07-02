@@ -1,5 +1,5 @@
 const {validate} = require('../libs/validate');
-const {getUser,updateUser} = require('../models/users');
+const {getUser,updateUser} = require('../models/user');
 const {generateCode} = require('../libs/utilities');
 const {verify_expiration} = require('../config');
 const {sendmail} = require('../libs/email');
