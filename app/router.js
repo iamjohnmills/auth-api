@@ -15,7 +15,6 @@ const meta = [
   { name: '/refresh_token', auth: false },
   { name: '/emailchange', auth: true },
   { name: '/activate/emailchange', auth: false },
-  { name: '/passwordchange', auth: true },
   { name: '/me', auth: true },
 ]
 
@@ -124,11 +123,6 @@ router.post('/emailchange', async (req, res) => {
 router.post('/activate/emailchange', async (req, res) => {
   const emailchange = require('./controllers/auth/emailchange');
   return res.json( await emailchange({ body: req.body}) );
-});
-
-router.post('/passwordchange', async (req, res) => {
-  const passwordchange = require('./controllers/auth/passwordchange');
-  return res.json( await passwordchange({ token: req.token, body: req.body}) );
 });
 
 
